@@ -1,0 +1,117 @@
+GERAIS:
+    Incremento          ->  ++
+    Decremento          ->  --
+    Raíz quadrada       -> ** (1/2)   ou   ** 0.5
+    NaN                 -> Not a Number
+----------------//------------------
+COMENTÁRIO JS:
+    //      -> Linha
+    /* */   -> BLoco
+----------------//------------------
+VARÁVEIS:
+    let  ->  Pode mudar
+    const:  -> Não pode mudar
+----------------//------------------
++ SOBRE STRING:
+    "Um \"texto\""  -> Dá certo
+    OBS: para colocar barra invertida no texto, tem que colocar duas (\\)
+
+    [número]                                (Pegar o elemento do índice da String)
+    .charAt(número)                         ('', mas retorna)
+    .indexOf('letra', número)               (Letra a partir de algum índice)
+    .lastIndexOf()                          (Procura de trás pra frente)
+    .match(/[]/g(repete))                            ()
+    .serch(/[]/)                            (Procura a letra e retorna o índice)
+    .replace('original', 'substituta')      (Troca palavras)
+    .slice(início, fim+1)                   (Pega uma parte)
+    .split('')                              (Separa)
+----------------//------------------
+NÚMEROS:
+    .toString()                                        (Transforma em String)/(2) = Binário
+    .toFixed(número)                                   (Quantas casas decimais o número vai ter)
+    Number.isInteger(número/variável)                  (Checa se o número é inteiro ou não)
+    Number.isNaN()                                     (Pergunta se essa conta é inválida)
+
+    Ex estranho:
+        let num1 = 0.7
+        let num2 = 0.1
+
+        console.log(num1 + num2)
+        == 0.7999999999999999
+
+    Como resolver:
+        let num1 = 0.7
+        let num2 = 0.1
+
+        num1 += num2
+        num1 += num2
+        num1 += num2
+
+        num1 = parseFloat(num1.toFixed(2))
+        
+        console.log(num1)
+        console.log(Number.isInteger(num1))
+        == 1 true
+----------------//------------------
+OBJETO MATH:
+    Math.
+
+    Math.floor()            (Arrendonda para baixo)
+    Math.ceil()             (Arrendonda para cima)
+    Math.round()            (Arrendonda para o mais próximo)
+    Math.max()              (Acha o maior número da sequência)
+    Math.min()              (Acha o menor número da sequência)
+    Math.random()           (Gera um número entre 0 e 1, mas o 1 não é incluído)
+        - Math.round(Math.random() * 10)    ->  Número aleatório entre 0 e 9
+    Math.PI()               (Valor de PI)
+    Math.pow()              (Potênciação)
+----------------//------------------
+ARRAYS:
+    []  
+    
+    - É bom só bom só colocar um tipo de dado, como nome, número, boolean.
+    - Índice é por elemento
+        Ex:   0       1        2
+            ['Caio', 'Maria', 'Gustavo']
+    - Array pode ser alterado
+
+    .push()                     (Adiciona no final)
+    .unshift()                  (Adiciona no começo)
+    .pop()                      (Remove o último)(Pode salvar o elemento removido)
+    .shift()                    (Remove o primeiro)
+----------------//------------------
+FUNÇÕES:
+    =>
+----------------//------------------
+OBJETOS:
+    - Argumento é o valor passado para o parâmetro.
+    this.    ->   Este objeto, nesse contexto
+----------------//------------------
+VALORES PRIMITIVOS:
+    - Valores Imutáveis
+    - São: string, number, boolean, undefined, null, bigint e symbol.
+    - Valores copiados
+----------------//------------------
+VALORES PORE REFERÊNCIA:
+    - Valores mutáveis
+    - São: array, object, funtion
+    - Valores passados por referência
+    [...(vairável)]         (Copia)
+    {...(variável)}         (Copia)(const)
+----------------//------------------
+OPERADORES DE COMPARAÇÃO:
+    >       (Maior que)
+    >=      (Maior ou igual a)
+    <       (Menor)
+    <=      (Menor ou igual a)
+    ==      (Igualdade)
+    ===     (Igualdade estrita (valor e tipo))
+    !=      (Diferente (valor))
+    !==     (Diferente estrito (valor e tipo))
+----------------//------------------
+OPERADORES LÓGICOS:
+    &&      (And/ e)    -> Todas as expressões precisam ser verdadeiras para retornar true
+    ||      (Or/ ou)    -> Só uma expressão precisa ser verdadeira para retornar true
+    !       (Not/ não)  -> Negando
+----------------//------------------
+
