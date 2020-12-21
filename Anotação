@@ -114,4 +114,30 @@ OPERADORES LÓGICOS:
     ||      (Or/ ou)    -> Só uma expressão precisa ser verdadeira para retornar true
     !       (Not/ não)  -> Negando
 ----------------//------------------
-
+OPERAÇÃO TERNÁRIA:
+    ?
+    :
+    
+    Ex:
+        const pontuaçãoUsuário = 1000;
+        const nívelUsuário = pontuaçãoUsuário >= 1000 ? 'Usuário VIP' : 'Usuário normal';
+        = Usuário VIP
+----------------//------------------
+OBJETO DATE:
+    new Date()              ()
+    .toString()             (Data completa)
+    .getDate()              (Pega o número do dia)
+    .getMonth()             (Pegar o mês) // Os meses começam do 0
+    .getFullYear()          (Pregar o ano)
+    .getHours()             (Pegar as horas)
+    .getMinutes()           (Pegar os minutos)
+    .getSeconds()           (Pegar os segundos)
+    .getMilliseconds()      (Pegar os milisegundos)
+    .getDay()               (Pega o dia da semana) // 0 - Domingo, 6 - Sábado
+----------------//------------------
+SWITCH/CASE:
+    switch (variável) {
+        case <condição>:
+            break;
+        case...
+    }

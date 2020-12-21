@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 40 Ex</title>
+    <link rel="stylesheet" href="./assets/css/style.css">
+</head>
+
+<body>
+    <section>
+        <h1 class="título">Tabela IMC</h1>
+        <div class="imc">
+            <strong>IMC</strong> <br>
+            Menos do que 18,5 <br>
+            Entre 18,5 e 24,9<br>
+            Entre 25 e 29,9<br>
+            Entre 30 e 34,9<br>
+            Entre 35 e 39,9<br>
+            Mais do que 40<br>
+        </div>
+        
+        <div class="resultado">
+            <strong>Resultado</strong><br>
+            Abaixo do peso <br>
+            Peso normal<br>
+            Sobrepeso<br>
+            Obesidade grau 1<br>
+            Obesidade grau 2<br>
+            Obesidade grau 3<br>
+        </div>
+
+        <form action="./assets/js/main.js" method="post" id="form">
+            <h2>Calculadora IMC</h2>
+            <label for="peso">Peso</label> 
+            <input type="text" id="peso-input" name="1">
+            <label for="altura">Altura</label>
+            <input type="text" id="altura-input" name="2" onkeydown="(event)">
+            <input type="button" value="Enviar" class="button" onclick="enviar()" >
+        </form>
+
+        <div id="res"></div>
+    </section>
+    <footer>
+        <p>&copy; LeonardaSaad</p>
+    </footer>
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
