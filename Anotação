@@ -3,6 +3,8 @@ GERAIS:
     Decremento          ->  --
     Raíz quadrada       -> ** (1/2)   ou   ** 0.5
     NaN                 -> Not a Number
+    i                   -> index
+    .trim()             -> Remove espaços extras
 ----------------//------------------
 COMENTÁRIO JS:
     //      -> Linha
@@ -69,7 +71,7 @@ OBJETO MATH:
 ARRAYS:
     []  
     
-    - É bom só bom só colocar um tipo de dado, como nome, número, boolean.
+    - É bom só bom só colocar um tipo de dado, como nome, número, boolean
     - Índice é por elemento
         Ex:   0       1        2
             ['Caio', 'Maria', 'Gustavo']
@@ -79,6 +81,16 @@ ARRAYS:
     .unshift()                  (Adiciona no começo)
     .pop()                      (Remove o último)(Pode salvar o elemento removido)
     .shift()                    (Remove o primeiro)
+
+    - Para chamar algo dentro de um array usa-se: 
+        [índice da array][índice do item] ou [,[]]
+        
+        Ex:
+                               0        1
+                             0 1 2    0 1 2
+            const numeros [ [1,2,3], [4,5,6]] 
+            const [,[,,seis]] = numeros
+            console.log(seis);
 ----------------//------------------
 FUNÇÕES:
     =>
@@ -141,3 +153,66 @@ SWITCH/CASE:
             break;
         case...
     }
+----------------//------------------
+ATRIBUIÇÃO VIA DESESTRUTURAÇÃO (OBJETOS): 47
+----------------//------------------
+FOR - CLÁSSICO:
+    for (; ; ++) {
+    };
+----------------//------------------
+FOR IN:
+    for (let ... in ...) {
+    }
+----------------//------------------
+FOR OF:
+    - Valor
+----------------//------------------
+FOREACH:
+    .forEach(function...)
+----------------//------------------
+WHILE E DO WHILE:
+    While:
+    - Confere a condição depois executa
+    while () {
+        i++;
+    }
+
+    Do While: 
+    - Executa e depois confere a condição
+    do {
+
+    } while ();
+----------------//------------------
+BREACK E CONTINUE:
+    Breack:
+        - Não executa nada depois
+
+    Continue:
+        - Pula a ação
+----------------//------------------
+TRY, CATCH, THROW E FINALLY - TRATANDO E LANÇANDO ERROS:
+    try         -> "Tentar"
+    catch       -> "Caso tenha o erro" - Recebe o erro
+    throw       -> Lança erros
+    finally     -> Sempre será executado
+    instanceof  -> Se não for uma instância de algo informado, retorna falso
+
+    ex:
+        try {
+            console.log(aoExisto);
+        } catch(err) {
+            console.log('naoExisto não existe.');
+        }
+    
+    ex2: 
+        ...{ throw new Error("...") }
+----------------//------------------
+SETINTERVAL E SETTIMEOUT:
+    setInterval(horário, depois de quanto tempo vai rodar dnv)
+    setTimeout(timer, tempo pra parar o timer)              -> Só é executada uma vez
+----------------//------------------
+JSON:
+    JSON.stringify()            ->  String do array, convertido em JSON
+    localStorage.setItem()      ->  Salva coisas no navegador
+
+
