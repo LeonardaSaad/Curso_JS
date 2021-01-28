@@ -5,6 +5,7 @@ GERAIS:
     NaN                 -> Not a Number
     i                   -> index
     .trim()             -> Remove espaços extras
+    get                 -> Faz uma função fingir ser um atributo | Não utiliza mais ()
 ----------------//------------------
 COMENTÁRIO JS:
     //      -> Linha
@@ -230,17 +231,20 @@ MANEIRAS DE DECLARAR FUNÇÕES:
         };
         obj.falar();
 ----------------//------------------
-RETORNO DA FUNÇÃO: "aula 66"
+RETORNO DA FUNÇÃO: "aula 67"
 ----------------//------------------
-ESCOPO LÉXICO: "aula 67"
+ESCOPO LÉXICO: "aula 68"
 ----------------//------------------
-CLOSURES: "aula 68"
+CLOSURES: "aula 69"
 ----------------//------------------
-FUNÇÕES DE CALLBACK: "aula 69"
+FUNÇÕES DE CALLBACK: "aula 70"
 ----------------//------------------
-FUNÇÕES IMEDIATAS (IIFE): "aula 70":
+FUNÇÕES IMEDIATAS (IIFE): "aula 71":
     (function...)();
 ----------------//------------------
+FUNÇÕES FÁBRICAS (FACTORY FUNCTIONS): 72
+    - Funções que retornam objetos
 ----------------//------------------
+
 ----------------//------------------
 
