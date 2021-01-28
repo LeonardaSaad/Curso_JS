@@ -214,5 +214,33 @@ SETINTERVAL E SETTIMEOUT:
 JSON:
     JSON.stringify()            ->  String do array, convertido em JSON
     localStorage.setItem()      ->  Salva coisas no navegador
-
+----------------//------------------
+MANEIRAS DE DECLARAR FUNÇÕES:
+    Function expression:
+        const souUmDado = function() {};
+        souUmDado();
+    
+    Arrow function:
+        const funcaoArrow = () => {}
+        funcaoArrow();
+    
+    Dentro de um objeto:
+        const obj = {
+            falar: funtion() {};
+        };
+        obj.falar();
+----------------//------------------
+RETORNO DA FUNÇÃO: "aula 66"
+----------------//------------------
+ESCOPO LÉXICO: "aula 67"
+----------------//------------------
+CLOSURES: "aula 68"
+----------------//------------------
+FUNÇÕES DE CALLBACK: "aula 69"
+----------------//------------------
+FUNÇÕES IMEDIATAS (IIFE): "aula 70":
+    (function...)();
+----------------//------------------
+----------------//------------------
+----------------//------------------
 
