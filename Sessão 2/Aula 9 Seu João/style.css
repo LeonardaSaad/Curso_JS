@@ -1,0 +1,17 @@
+header {
+    font: normal 30px Arial;
+    text-align: center;
+    border-top: none;
+    padding: none;
+}
+
+section {
+    font: normal 18px Arial;
+    text-align: center;
+
+}
+
+.div-img {
+    text-align: center;
+    padding-top: 30px; 
+}

@@ -1,0 +1,471 @@
+GERAIS:
+    Incremento          ->  ++
+    Decremento          ->  --
+    Raíz quadrada       -> ** (1/2)   ou   ** 0.5
+    NaN                 -> Not a Number
+    i                   -> index
+    .trim()             -> Remove espaços extras
+    get                 -> Faz uma função fingir ser um atributo | Não utiliza mais ()
+----------------//------------------
+COMENTÁRIO JS:
+    //      -> Linha
+    /* */   -> BLoco
+----------------//------------------
+VARÁVEIS:
+    let  ->  Pode mudar
+    const:  -> Não pode mudar
+----------------//------------------
+SOBRE STRING:
+    "Um \"texto\""  -> Dá certo
+    OBS: para colocar barra invertida no texto, tem que colocar duas (\\)
+
+    [número]                                (Pegar o elemento do índice da String)
+    .charAt(número)                         ('', mas retorna)
+    .indexOf('letra', número)               (Letra a partir de algum índice)
+    .lastIndexOf()                          (Procura de trás pra frente)
+    .match(/[]/g(repete))                            ()
+    .serch(/[]/)                            (Procura a letra e retorna o índice)
+    .replace('original', 'substituta')      (Troca palavras) //remove tudo que não for string(/\D+/g, '')// não é number(/[^\d]+/g,'')
+    .slice(início, fim+1)                   (Pega uma parte)
+    .split('')                              (Separa)
+----------------//------------------
+NÚMEROS:
+    .toString()                                        (Transforma em String)/(2) = Binário
+    .toFixed(número)                                   (Quantas casas decimais o número vai ter)
+    Number.isInteger(número/variável)                  (Checa se o número é inteiro ou não)
+    Number.isNaN()                                     (Pergunta se essa conta é inválida)
+
+    Ex estranho:
+        let num1 = 0.7
+        let num2 = 0.1
+
+        console.log(num1 + num2)
+        == 0.7999999999999999
+
+    Como resolver:
+        let num1 = 0.7
+        let num2 = 0.1
+
+        num1 += num2
+        num1 += num2
+        num1 += num2
+
+        num1 = parseFloat(num1.toFixed(2))
+        
+        console.log(num1)
+        console.log(Number.isInteger(num1))
+        == 1 true
+----------------//------------------
+OBJETO MATH:
+    Math.
+
+    Math.floor()            (Arrendonda para baixo)
+    Math.ceil()             (Arrendonda para cima)
+    Math.round()            (Arrendonda para o mais próximo)
+    Math.max()              (Acha o maior número da sequência)
+    Math.min()              (Acha o menor número da sequência)
+    Math.random()           (Gera um número entre 0 e 1, mas o 1 não é incluído)
+        - Math.round(Math.random() * 10)    ->  Número aleatório entre 0 e 9
+    Math.PI()               (Valor de PI)
+    Math.pow()              (Potênciação)
+----------------//------------------
+ARRAYS:
+    []  
+    
+    - É bom só bom só colocar um tipo de dado, como nome, número, boolean
+    - Índice é por elemento
+        Ex:   0       1        2
+            ['Caio', 'Maria', 'Gustavo']
+    - Array pode ser alterado
+
+    .push()                     (Adiciona no final)
+    .unshift()                  (Adiciona no começo)
+    .pop()                      (Remove o último)(Pode salvar o elemento removido)
+                         (Remove o primeiro elemento de um Array em strinh e retorna)
+    .join()                     (Junta todos os elementos de uma array em string e retorna)
+
+    - Para chamar algo dentro de um array usa-se: 
+        [índice da array][índice do item] ou [,[]]
+        
+        Ex:
+                               0        1
+                             0 1 2    0 1 2
+            const numeros [ [1,2,3], [4,5,6]] 
+            const [,[,,seis]] = numeros
+            console.log(seis);
+
+    .splice(indice atual, delete, elem1, elem2, elem3)
+    
+        Ex:
+            const nome = ['Maria', 'João', 'Eduarda', 'Gabriel', 'Júlia'];
+            const removidos = nomes.splice(3, 2);
+            console.log(nome, removidos);
+
+            /// ['Maria', 'João', 'Eduardo'] ['Gabriel', 'Júlia']
+            
+        Ex 2:
+            nome.splice(2, 0, 'Luiz', 'Otávio');
+            console.log(nomes);
+            /// [ 'Maria', 'João', 'Luiz', 'Otávia', 'Eduardo', 'Gabriel', 'Júlia' ]
+    
+
+    .concat()                   (Juntar dois arrays)
+        Ex:
+            const a1 = [1, 2 , 3];
+            const a2 = [4, 5, 6];
+            const a3 = a1.concat(a2);
+            /// [ 1, 2, 3, 4, 5, 6 ]
+
+            const a4 = a1.concat(a2, [7, 8, 9], 'Luiz');
+            console.log(a4);
+            /// [ 1, 2, 3, 4, 5, 6, 7, 8, 9, 'Luiz' ]
+
+    Spread
+        Ex:
+            const a1 = [1, 2 , 3];
+            const a2 = [4, 5, 6];
+            const a3 = [...a1, 'Luiz', ...a2,  ...[7, 8, 9]];
+            console.log(a3);
+            /// [ 1, 2, 3, 'Luiz', 4, 5, 6, 7, 8, 9 ]
+
+    Filter
+        - Retorna uma nova array
+        Ex:
+            const numeros = [5, 50, 80, 1, 2, 3, 5, 8, 7, 11, 15, 22, 27];
+
+            const numerosFiltrados = numeros.filter(valor => valor > 10);
+            
+            console.log(numerosFiltrados);
+            /// [ 50, 80, 11, 15, 22, 27 ]
+
+    Map
+        Ex: 
+            const numeros = [5, 50, 80, 1, 2, 3, 5, 8, 7, 11, 15, 22, 27];
+            const numerosEmDobro = numeros.map(valor => valor * 2);
+            console.log(numerosEmDobro);
+            /// [ 10, 100, 160,  2,  4,  6, 10,  16,  14, 22, 30, 44, 54 ]
+
+    Reduce
+        Ex:
+            const numeros = [5, 50, 80, 1, 2, 3, 5, 8, 7, 11, 15, 22, 27];
+            const total = numeros.reduce(function(acumulador, valor, indice, array) {
+                acumulador += valor;
+                return acumulador;
+            }, 0);
+            console.log(total)  
+            /// 236
+    
+    forEach
+        - Forma de diferente de iterar sobre arrays
+        Ex: 
+            const a1 = [10, 20, 30];
+            total = 0;
+            a1.forEach(valor => total += valor);
+            console.log(total);
+            /// 236
+----------------//------------------
+FUNÇÕES:
+    =>
+----------------//------------------
+OBJETOS:
+    - Argumento é o valor passado para o parâmetro.
+    this.    ->   Este objeto, nesse contexto
+----------------//------------------
+VALORES PRIMITIVOS:
+    - Valores Imutáveis
+    - São: string, number, boolean, undefined, null, bigint e symbol.
+    - Valores copiados
+----------------//------------------
+VALORES PORE REFERÊNCIA:
+    - Valores mutáveis
+    - São: array, object, funtion
+    - Valores passados por referência
+    [...(vairável)]         (Copia)
+    {...(variável)}         (Copia)(const)
+----------------//------------------
+OPERADORES DE COMPARAÇÃO:
+    >       (Maior que)
+    >=      (Maior ou igual a)
+    <       (Menor)
+    <=      (Menor ou igual a)
+    ==      (Igualdade)
+    ===     (Igualdade estrita (valor e tipo))
+    !=      (Diferente (valor))
+    !==     (Diferente estrito (valor e tipo))
+----------------//------------------
+OPERADORES LÓGICOS:
+    &&      (And/ e)    -> Todas as expressões precisam ser verdadeiras para retornar true
+    ||      (Or/ ou)    -> Só uma expressão precisa ser verdadeira para retornar true
+    !       (Not/ não)  -> Negando
+----------------//------------------
+OPERAÇÃO TERNÁRIA:
+    ?
+    :
+    
+    Ex:
+        const pontuaçãoUsuário = 1000;
+        const nívelUsuário = pontuaçãoUsuário >= 1000 ? 'Usuário VIP' : 'Usuário normal';
+        = Usuário VIP
+----------------//------------------
+OBJETO DATE:
+    new Date()              ()
+    .toString()             (Data completa)
+    .getDate()              (Pega o número do dia)
+    .getMonth()             (Pegar o mês) // Os meses começam do 0
+    .getFullYear()          (Pregar o ano)
+    .getHours()             (Pegar as horas)
+    .getMinutes()           (Pegar os minutos)
+    .getSeconds()           (Pegar os segundos)
+    .getMilliseconds()      (Pegar os milisegundos)
+    .getDay()               (Pega o dia da semana) // 0 - Domingo, 6 - Sábado
+----------------//------------------
+SWITCH/CASE:
+    switch (variável) {
+        case <condição>:
+            break;
+        case...
+    }
+----------------//------------------
+ATRIBUIÇÃO VIA DESESTRUTURAÇÃO (OBJETOS): 47
+----------------//------------------
+FOR - CLÁSSICO:
+    for ([inicialização]; [condição]; [expressão final/ ++]){
+        declaração
+    }
+----------------//------------------
+FOR IN:
+    for (let ... in ...) {
+    }
+----------------//------------------
+FOR OF:
+    - Valor
+----------------//------------------
+FOREACH:
+    .forEach(function...)
+----------------//------------------
+WHILE E DO WHILE:
+    While:
+    - Confere a condição depois executa
+    while () {
+        i++;
+    }
+
+    Do While: 
+    - Executa e depois confere a condição
+    do {
+
+    } while ();
+----------------//------------------
+BREACK E CONTINUE:
+    Breack:
+        - Não executa nada depois
+
+    Continue:
+        - Pula a ação
+----------------//------------------
+TRY, CATCH, THROW E FINALLY - TRATANDO E LANÇANDO ERROS:
+    try         -> "Tentar"
+    catch       -> "Caso tenha o erro" - Recebe o erro
+    throw       -> Lança erros
+    finally     -> Sempre será executado
+    instanceof  -> Se não for uma instância de algo informado, retorna falso
+
+    ex:
+        try {
+            console.log(aoExisto);
+        } catch(err) {
+            console.log('naoExisto não existe.');
+        }
+    
+    ex2: 
+        ...{ throw new Error("...") }
+----------------//------------------
+SETINTERVAL E SETTIMEOUT:
+    setInterval(horário, depois de quanto tempo vai rodar dnv)
+    setTimeout(timer, tempo pra parar o timer)              -> Só é executada uma vez
+----------------//------------------
+JSON:
+    JSON.stringify()            ->  String do array, convertido em JSON
+    localStorage.setItem()      ->  Salva coisas no navegador
+----------------//------------------
+MANEIRAS DE DECLARAR FUNÇÕES:
+    Function expression:
+        const souUmDado = function() {};
+        souUmDado();
+    
+    Arrow function:
+        const funcaoArrow = () => {}
+        funcaoArrow();
+    
+    Dentro de um objeto:
+        const obj = {
+            falar: funtion() {};
+        };
+        obj.falar();
+----------------//------------------
+RETORNO DA FUNÇÃO: "aula 67"
+----------------//------------------
+ESCOPO LÉXICO: "aula 68"
+----------------//------------------
+CLOSURES: "aula 69"
+----------------//------------------
+FUNÇÕES DE CALLBACK: "aula 70"
+----------------//------------------
+FUNÇÕES IMEDIATAS (IIFE): "aula 71":
+    (function...)();
+----------------//------------------
+FUNÇÕES FÁBRICAS (FACTORY FUNCTIONS): 72
+    - Funções que retornam objetos
+----------------//------------------
+FUNÇÕES CONSTRUTORAS (CONSTRUCTOR FUNCTIONS) : 77
+    - Constroi objetos
+    - Construtora -> Pessoa (new)
+    - Ex:
+        function Pessoa(nome, sobrenome) {
+            // Atributos ou métodos privados
+            const ID = 123456;
+
+            const metodoInterno = function() {
+
+            };
+
+            // Atributos ou métodos públicos
+            this.nome = nome;
+            this.sobrenome = sobrenome;
+        }
+
+        const p1 = new Pessoa('Luiz', 'Otávio');
+        const p2 = new Pessoa('Maria', 'Oliveira');
+
+        console.log(p1.nome);
+        //=Luiz
+----------------//------------------
+FUNÇÕES RECURSIVAS: 79
+    - Função que se chama de volta
+----------------//------------------
+FUNÇÕES GERADORAS: 80
+    - Não entrega todos os valores de um vez
+    - Ex: 
+        function* geradora1() {
+            // Código qualquer...
+            yield "Valor 1";
+            // Código qualquer...
+            yield "Valor 2";
+        }
+
+        const g1 = geradora1();
+        console.log(g1.next().value) // Valor 1
+        console.log(g1.next()) // { value: 'Valor 2', done: false }
+        console.log(g1.next()) // { value: undefined, done: true }
+----------------//------------------
+OBJETOS E PROTOTYPES: 90
+    Object.defineProperty()   
+        Ex:
+            function Produto(estoque) {
+                Object.defineProperty(this, 'estoque', {
+                    enumerable: true,       // mostra a chave
+                    value: estoque,         // valor
+                    writable: false,        // pode alterar (nesse caso não)
+                    consfigurable: true     // configurável
+                });
+            };
+
+    Object.defineProperties()
+        Ex:
+            function Produto(nome, preco, estoque) {
+                this.nome = nome;
+                this.preco = preco;
+
+                Object.defineProperties(this, {
+                    nome: {
+                        enumerable: true,      
+                        value: nome,         
+                        writable: false,        
+                        consfigurable: true 
+                    },
+                    preco: {
+                        enumerable: true,      
+                        value: preco,         
+                        writable: false,        
+                        consfigurable: true 
+                    },
+                });
+            };
+----------------//------------------
+GETTER E SETTER: 91
+----------------//------------------
+MÉTODOS ÚTEIS PARA OBJETO: 92
+    Object.keys                                      (Retorna as chaves)
+    Object.freeze                                    (Congela o objeto)
+    Object.defineProperties                          (Define várias propriedades)
+    Object.defineProperty                            (Define uma propriedade)
+    Object.getOwnPropertyDescriptor(o, 'prop')       (Retorna o que a propriedade é)
+        Ex:  console.log(Object.getOwnPropertyDescriptor(produto, 'nome'))
+            /// { value: 'Produto',
+                    writable: true,...
+                }
+    Object.value                                     (Retorna os valores)
+    Object.entries                                   (Retorna as chaves)
+    Object.assign(des, any)                          (Pega um objeto e você pode colocar coisas nele)
+    ...{spread}                                      (Espalha os valores do objeto)
+----------------//------------------
+PROTOTYPES:
+    - __proto__  == prototype
+    - Propotype serve para colocar métodos dentro do objeto de uma função contrutora, melhorando a performance;
+    - Caso exista um método que se repita em todos ou na maioria dos objetos, é recomendado usar o prototype;
+    - EX: 
+        Sessão 6 >> prototype.js
+----------------//------------------
+HERANÇA:
+    - Esse termo é muito usado para descrever que as características de um objeto são passadas para outro objeto. Assim como uma 
+      filha ou filho pode herdar características da sua mãe ou pai (geneticamente).   
+    - Javascript não é uma linguagem que apresenta essa característica em específico, portanto não existe "herança" aqui. O que 
+      ocorre, na verdade, é "delegação". Esse seria o termo mais correto para descrever "Herança" em JS.
+----------------//------------------
+POLIMORFISMO:   99 
+----------------//------------------
+Factory Functions + Prototypes: 100
+----------------//------------------
+OBJETO MAP() :
+    - Mapeia
+    - Algumas funções:
+        .set()      ---->   Colocar um valor
+        .get()      ---->   Obter um valor que já tenha sido colocado
+        .death()    ---->   Deleta que tenha sido colocado
+    - EX:
+        Sessão 6 >> Map.js
+----------------//------------------
+CLASS
+    - Igual a uma função construtora;
+    - Métodos são automaticamente lincados ao prototype;
+    - Getter e Setter
+    - Herança com class:
+        -> "class x extends y {}"
+            • y herdou tudo que tem na class x
+        -> Caso seja necessário chamas mais alguma propriedade é só usar super()
+    - EX:
+        Sessão 7 >> class.js
+----------------//------------------
+SYMBOL()
+    - Pode ser usado para criar uma chave privada dentro do Objeto;
+    - Toda vez que for chamado gera um id aleatório;
+    Ex:
+        Sessão 7 >> symbol.ja
+----------------//------------------
+MÉTODOS DE INSTÂNCIA E ESTÁTICOS
+    - Métodos que você pode acessar na classe sem instanciar a classe (new);
+    - Não estão disponíveis dentro da instância;
+    - Métodos estáticos não tem acesso aos dados da intância;
+----------------//------------------
+PROMISES: sessão 7 -> promises
+    -> Substitui o Callback;
+    -> 
+----------------//------------------
+----------------//------------------
+----------------//------------------
+----------------//------------------
+----------------//------------------
+----------------//------------------
+----------------//------------------
+----------------//------------------
+
